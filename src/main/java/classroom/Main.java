@@ -1,3 +1,5 @@
+package classroom;
+
 public class Main {
     public static void main(String[] args) {
         int vecumsSuns = 3; // Vesels skaitlis
