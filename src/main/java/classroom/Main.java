@@ -59,7 +59,7 @@ public class Main {
         System.out.println("Svars:");
         System.out.println(svarsSuns + " kg" + "\n"); //tukša rinda beigās
         System.out.println("Suņa augstums:" + " " + augumsSuns + " cm");
-        System.out.println("Vai mans suns ir izsalcis?:" + " " + vardsKakis);
+        System.out.println("Vai mans suns ir izsalcis?:" + " " + isHungry);
         System.out.println("Vai mans suns ir šķirnes suns?:" + " " + isBreedDog);
         System.out.println(); //tukša rinda
 
