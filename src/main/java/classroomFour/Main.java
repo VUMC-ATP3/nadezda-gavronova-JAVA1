@@ -76,17 +76,17 @@ public class Main {
         reksis.name = "Dingo";
         System.out.println(reksis.vaiRej);
         reksis.astesGarums = 10;
-        reksis.printName();
+     //   reksis.printName();
         reksis.izdodSkanu();
 
         Animal dzivnieks = new Animal();
         dzivnieks.name = "Dzivnieks kaut kāds";
-        dzivnieks.printName();
-        dzivnieks.izdodSkanu();
+      //  dzivnieks.printName();
+       // dzivnieks.izdodSkanu();
 
         Cat cat = new Cat();
         cat.name = "Muris";
-        cat.printName();
+      //  cat.printName();
         cat.izdodSkanu();
 
 

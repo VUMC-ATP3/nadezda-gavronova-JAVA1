@@ -4,13 +4,11 @@ public class Animal {
     int astesGarums;
     String name;
 
-    public void printName(){
-        System.out.println(name);
+    public void printTristuris(){
+        System.out.println("Mēs veidojam trijstūri..");
     }
 
-    public void izdodSkanu(){
-        System.out.println("ARFGGFGGG");
-    }
+
 
 
 }
