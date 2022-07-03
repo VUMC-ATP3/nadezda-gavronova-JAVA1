@@ -122,7 +122,7 @@ public class LoopHomeWork {
         int [] skaitluMasivs = new int[100];
         int paraSkatislis = 2;
         for (int masivaIndeks = 0; masivaIndeks < skaitluMasivs.length; masivaIndeks++) {
-            skaitluMasivs[masivaIndeks] = masivaIndeks;
+            skaitluMasivs[masivaIndeks] = paraSkatislis;
             System.out.print(paraSkatislis + " ");
             paraSkatislis = paraSkatislis + 2;
         }
