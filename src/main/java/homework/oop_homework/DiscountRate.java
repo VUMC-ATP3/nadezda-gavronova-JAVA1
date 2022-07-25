@@ -1,22 +1,37 @@
 package homework.oop_homework;
 
 public class DiscountRate {
-    double serviceDiscountPremium = 0.2;
-    double serviceDiscountGold = 0.15;
-    double serviceDiscountSilver = 0.1;
-    double productDiscountPremium = 0.1;
-    double productDiscountGold = 0.1;
-    double productDiscountSilver = 0.1;
+    private static double serviceDiscountPremium = 0.2;
+    private static double serviceDiscountGold = 0.15;
+    private static double serviceDiscountSilver = 0.1;
+    private static double productDiscountPremium = 0.1;
+    private static double productDiscountGold = 0.1;
+    private static double productDiscountSilver = 0.1;
 
 
-    public double getServiceDiscountRate (String type){
-        if (type equals("Premium")) { return serviceDiscountPremium }
-        else if (type equals("Gold")) { return serviceDiscountGold }
-        else if (type equals("Silver")) { return serviceDiscountSilver }
-        else{return 0}
+    public static double getServiceDiscountRate(String type){
+        switch (type) {
+            case "Premium":
+                return serviceDiscountPremium;
+            case "Gold":
+                return serviceDiscountGold;
+            case "Silver":
+                return serviceDiscountSilver;
+            default:
+                throw new IllegalArgumentException("incorrect service type");
+        }
     }
 
-    public double getProductDiscountRate (String type){
-
+    public static double getProductDiscountRate(String type){
+        switch (type) {
+            case "Premium":
+                return productDiscountPremium;
+            case "Gold":
+                return productDiscountGold;
+            case "Silver":
+                return productDiscountSilver;
+            default:
+                throw new IllegalArgumentException("incorrect service type");
+        }
     }
 }

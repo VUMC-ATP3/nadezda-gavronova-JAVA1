@@ -8,44 +8,52 @@ public class Visit {
     private double serviceExpense;
     private double productExpense;
 
-    public Visit(String name, Date date){
-        this.customer = name;
+    public Visit(Customer customer, Date date){
+        this.customer = customer;
         this.date = date;
     }
 
     public String getName(){
-        return customer;
+        return customer.getName();
     }
 
     public double getServiceExpense() {
-        return serviceExpense;
+        if (!customer.isMember()) {
+            return serviceExpense;
+        } else {
+            return serviceExpense - (serviceExpense * DiscountRate.getServiceDiscountRate(customer.getMemberType()));
+        }
     }
 
-    public void setServiceExpense(double ex) {
-        this.serviceExpense = ex;
+    public void setServiceExpense(double serviceExpense) {
+        this.serviceExpense = this.serviceExpense + serviceExpense;
     }
 
     public double getProductExpense() {
-        return productExpense;
+        if (!customer.isMember()) {
+            return productExpense;
+        } else {
+            return productExpense - (productExpense * DiscountRate.getProductDiscountRate(customer.getMemberType()));
+        }
     }
 
-    public void setProductExpense(double ex) {
-        this.productExpense = ex;
+    public void setProductExpense(double productExpense) {
+        this.productExpense = this.productExpense + productExpense;
     }
 
     public double getTotalExpense() {
-        double totalExpense;
-        totalExpense = (serviceExpense - serviceExpense * getServiceExpense()) + (productExpense - productExpense * getProductExpense());
-        return totalExpense;
+        return getProductExpense() + getServiceExpense();
     }
 
     @Override
     public String toString() {
-        return "Visit{" +
-                "customer=" + customer +
-                ", date=" + date +
-                ", serviceExpense=" + serviceExpense +
-                ", productExpense=" + productExpense +
-                '}';
+        return ">> Visit: " +
+                "Customer = " + customer.getName() +
+                " | Customer member = " + customer.isMember() +
+                " | Member type = " + customer.getMemberType() +
+                " | date = " + date +
+                " | Expense of services = " + serviceExpense +
+                " | Expense of products = " + productExpense +
+                '.';
     }
 }
